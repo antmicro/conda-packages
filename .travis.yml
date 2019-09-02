@@ -20,34 +20,34 @@ install:
 
 env:
   - PACKAGE=vtr
-  - PACKAGE=libxml2
-  - PACKAGE=libusb
-  - PACKAGE=yosys
-  - PACKAGE=nextpnr-ice40
-  - PACKAGE=nextpnr-xilinx
-  - PACKAGE=openocd
-  - PACKAGE=prjxray
-  # XXX riscv32 toolchain: disabled as fails to build
-  # PACKAGE=riscv32/binutils
-  # verilog tools
-  - PACKAGE=icestorm
-  - PACKAGE=iverilog
-  - PACKAGE=verilator
-  - PACKAGE=netlistsvg
-  # SystemVerilog tools
-  - PACKAGE=zachjs-sv2v
-  - PACKAGE=odin_II
-  - PACKAGE=tree-sitter-verilog
-  - PACKAGE=slang               USE_SYSTEM_GCC_VERSION="8"
-  - PACKAGE=moore
-  - PACKAGE=surelog
-  - PACKAGE=sv-parser
-  - PACKAGE=verible             USE_SYSTEM_GCC_VERSION="8"
-  # protocol analyzers
-  - PACKAGE=sigrok-cli
-  - PACKAGE=yosys-plugins
-  # metapackages
-  - PACKAGE=symbiflow-toolchain-xray
+    #  - PACKAGE=libxml2
+    #  - PACKAGE=libusb
+    #  - PACKAGE=yosys
+    #  - PACKAGE=nextpnr-ice40
+    #  - PACKAGE=nextpnr-xilinx
+    #  - PACKAGE=openocd
+    #  - PACKAGE=prjxray
+    #  # XXX riscv32 toolchain: disabled as fails to build
+    #  # PACKAGE=riscv32/binutils
+    #  # verilog tools
+    #  - PACKAGE=icestorm
+    #  - PACKAGE=iverilog
+    #  - PACKAGE=verilator
+    #  - PACKAGE=netlistsvg
+    #  # SystemVerilog tools
+    #  - PACKAGE=zachjs-sv2v
+    #  - PACKAGE=odin_II
+    #  - PACKAGE=tree-sitter-verilog
+    #  - PACKAGE=slang               USE_SYSTEM_GCC_VERSION="8"
+    #  - PACKAGE=moore
+    #  - PACKAGE=surelog
+    #  - PACKAGE=sv-parser
+    #  - PACKAGE=verible             USE_SYSTEM_GCC_VERSION="8"
+    #  # protocol analyzers
+    #  - PACKAGE=sigrok-cli
+    #  - PACKAGE=yosys-plugins
+    #  # metapackages
+    #  - PACKAGE=symbiflow-toolchain-xray
 
 script:
   - bash $TRAVIS_BUILD_DIR/.travis/script.sh
