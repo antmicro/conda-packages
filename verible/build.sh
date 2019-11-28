@@ -16,7 +16,7 @@ chmod +x bazel-0.29.1-installer-linux-x86_64.sh
 
 export PATH=$BAZEL_PREFIX/bin:$PATH
 
-
 bazel build --cxxopt='-std=c++17' //...
 
-install -D bazel-bin/verilog/tools/syntax/verilog_syntax $PREFIX/bin/verilog_syntax
+mkdir -p $PREFIX/bin/
+cp bazel-bin/verilog/tools/syntax/verilog_syntax $PREFIX/bin/verilog_syntax
