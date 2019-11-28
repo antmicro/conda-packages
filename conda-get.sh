@@ -6,6 +6,19 @@ set -e
 CONDA_PATH=${1:-~/conda}
 
 echo "Downloading Conda installer."
+
+if [ $TRAVIS_OS_NAME = 'linux' ]; then
+    sys_name=Linux
+else
+    sys_name=MacOSX
+fi
+
+wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-${sys_name}-x86_64.sh
+chmod a+x Miniconda3-latest-${sys_name}-x86_64.sh
+if [ ! -d $CONDA_PATH -o ! -z "$CI"  ]; then
+        ./Miniconda3-latest-${sys_name}-x86_64.sh -p $CONDA_PATH -b -f
+fi
+
 wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 chmod a+x Miniconda3-latest-Linux-x86_64.sh
 
