@@ -3,7 +3,7 @@
 source $TRAVIS_BUILD_DIR/.travis/common.sh
 set -e
 
-if [ ! -z "$USE_SYSTEM_GCC_VERSION" ]; then
+if [ ! -z "$USE_SYSTEM_GCC_VERSION" ] && [ $TRAVIS_OS_NAME = 'linux' ]; then
 	sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 	sudo apt update
 	sudo apt install -y gcc-${USE_SYSTEM_GCC_VERSION} g++-${USE_SYSTEM_GCC_VERSION}
