@@ -14,7 +14,7 @@ build:
   script_env:
     - CI
     - TRAVIS
-    - USE_SYSTEM_GCC_VERSION
+    - USE_SYSTEM_GCC_VERSION [linux]
 
 requirements:
   build:

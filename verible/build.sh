@@ -2,17 +2,23 @@
 
 set -e
 set -x
-
-export CC=gcc-${USE_SYSTEM_GCC_VERSION}
-export CXX=g++-${USE_SYSTEM_GCC_VERSION}
-
+uname_out="$(uname)"
+if [ ${uname_out} = "Linux" ]; then
+    export CC=gcc-${USE_SYSTEM_GCC_VERSION}
+    export CXX=g++-${USE_SYSTEM_GCC_VERSION}
+    sys_name=linux
+elif [ ${uname_out} = "Darwin" ]; then
+    sys_name=darwin
+    export CC=clang
+    export CXX=clang++
+fi
 
 mkdir bazel-install
 BAZEL_PREFIX=$PWD/bazel-install
 
-wget https://github.com/bazelbuild/bazel/releases/download/0.29.1/bazel-0.29.1-installer-linux-x86_64.sh
-chmod +x bazel-0.29.1-installer-linux-x86_64.sh
-./bazel-0.29.1-installer-linux-x86_64.sh --prefix=$BAZEL_PREFIX
+wget https://github.com/bazelbuild/bazel/releases/download/1.2.1/bazel-1.2.1-installer-${sys_name}-x86_64.sh
+chmod +x bazel-1.2.1-installer-${sys_name}-x86_64.sh
+./bazel-1.2.1-installer-${sys_name}-x86_64.sh --prefix=$BAZEL_PREFIX
 
 export PATH=$BAZEL_PREFIX/bin:$PATH
 
