@@ -1,6 +1,7 @@
 language: c
 
 os:
+    - windows
     - osx
     - linux
 #dist: trusty
@@ -49,6 +50,44 @@ env:
 
 jobs:
     exclude:
+        - os: windows
+          env: PACKAGE=tree-sitter-verilog
+        - os: windows
+          env: PACKAGE=libusb
+        - os: windows
+          env: PACKAGE=zachjs-sv2v         CONDA_CHANNELS="conda-forge"
+        - os: windows
+          env: PACKAGE=verible                                             USE_SYSTEM_GCC_VERSION="8"
+        - os: windows
+          env: PACKAGE=vtr                 CONDA_CHANNELS="pkgw-forge,conda-forge"
+        - os: windows
+          env: PACKAGE=yosys
+        - os: windows
+          env: PACKAGE=libxml2
+        - os: windows
+          env: PACKAGE=libsub
+        - os: windows
+          env: PACKAGE=nextpnr
+        - os: windows
+          env: PACKAGE=openocd
+        - os: windows
+          env: PACKAGE=icestorm
+        - os: windows
+          env: PACKAGE=verilator
+        - os: windows
+          env: PACKAGE=iverilog
+        - os: windows
+          env: PACKAGE=netlistsvg          CONDA_CHANNELS="conda-forge"
+        - os: windows
+          env: PACKAGE=odin_II             CONDA_CHANNELS="pkgw-forge,conda-forge"
+        - os: windows
+          env: PACKAGE=slang               CONDA_CHANNELS="conda-forge"    USE_SYSTEM_GCC_VERSION="8"
+        - os: windows
+          env: PACKAGE=surelog             CONDA_CHANNELS="conda-forge"
+        - os: windows
+          env: PACKAGE=sigrok-cli          CONDA_CHANNELS="conda-forge"
+        - os: osx
+          env: PACKAGE=libusb
         - os: osx
           env: PACKAGE=vtr                 CONDA_CHANNELS="pkgw-forge,conda-forge"
         - os: osx
