@@ -47,6 +47,37 @@ env:
   # protocol analyzers
   - PACKAGE=sigrok-cli          CONDA_CHANNELS="conda-forge"
 
+jobs:
+    exclude:
+        - os: osx
+          env: PACKAGE=vtr                 CONDA_CHANNELS="pkgw-forge,conda-forge"
+        - os: osx
+          env: PACKAGE=yosys
+        - os: osx
+          env: PACKAGE=libxml2
+        - os: osx
+          env: PACKAGE=libsub
+        - os: osx
+          env: PACKAGE=nextpnr
+        - os: osx
+          env: PACKAGE=openocd
+        - os: osx
+          env: PACKAGE=icestorm
+        - os: osx
+          env: PACKAGE=verilator
+        - os: osx
+          env: PACKAGE=iverilog
+        - os: osx
+          env: PACKAGE=netlistsvg          CONDA_CHANNELS="conda-forge"
+        - os: osx
+          env: PACKAGE=odin_II             CONDA_CHANNELS="pkgw-forge,conda-forge"
+        - os: osx
+          env: PACKAGE=slang               CONDA_CHANNELS="conda-forge"    USE_SYSTEM_GCC_VERSION="8"
+        - os: osx
+          env: PACKAGE=surelog             CONDA_CHANNELS="conda-forge"
+        - os: osx
+          env: PACKAGE=sigrok-cli          CONDA_CHANNELS="conda-forge"
+
 script:
   - bash $TRAVIS_BUILD_DIR/.travis/script.sh
 
