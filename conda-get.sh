@@ -10,7 +10,7 @@ if [ $TRAVIS_OS_NAME = 'windows' ]; then
     if [ ! -d $CONDA_PATH -o ! -z "$CI"  ]; then
         wget -c https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe -o miniconda.exe
         echo "Installing conda"
-        nohup powershell ./miniconda.exe "//S //D=$CONDA_PATH"
+        cmd.exe /c 'miniconda.exe /S /D=${CONDA_PATH}'
     fi
     alias conda='powershell $CONDA_PATH/condabin/conda'
 else
