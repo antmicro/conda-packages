@@ -8,9 +8,7 @@ CONDA_PATH=${1:-~/conda}
 echo "Downloading Conda installer."
 if [ $TRAVIS_OS_NAME = 'windows' ]; then
     if [ ! -d $CONDA_PATH -o ! -z "$CI"  ]; then
-        wget -c https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe -o miniconda.exe
-        echo "Installing conda"
-        cmd.exe /c 'miniconda.exe /S /D=${CONDA_PATH}'
+        choco install miniconda3 --params="/D=${CONDA_PATH}"
     fi
     alias conda='powershell $CONDA_PATH/condabin/conda'
 else
