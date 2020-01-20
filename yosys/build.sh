@@ -19,7 +19,7 @@ which pkg-config
 make config-conda-linux
 echo "PREFIX := $PREFIX" >> Makefile.conf
 
-make V=1 -j$CPU_COUNT
+make READLINE_STATIC=$PREFIX/lib/libreadline.a ENABLE_STATIC_READLINE=1 V=1 -j$CPU_COUNT
 make test
 make install
 
