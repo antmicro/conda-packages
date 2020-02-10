@@ -12,6 +12,7 @@ addons:
 
 before_install:
  - source $TRAVIS_BUILD_DIR/.travis/common.sh
+ - source $TRAVIS_BUILD_DIR/.travis/tag-filter.sh
  - bash $TRAVIS_BUILD_DIR/.travis/fixup-git.sh
  - source $TRAVIS_BUILD_DIR/.travis/common.sh
 
