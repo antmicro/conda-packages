@@ -34,4 +34,7 @@ export TRAVIS_REPO_SLUG="$(git rev-parse --abbrev-ref --symbolic-full-name @{u})
 echo "TRAVIS_REPO_SLUG='${TRAVIS_REPO_SLUG}'"
 
 ./conda-meta-extra.sh
+
+source .travis/tag-filter.sh
+
 conda $@
