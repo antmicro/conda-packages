@@ -24,6 +24,7 @@ env:
   - PACKAGE=libusb
   - PACKAGE=yosys
   - PACKAGE=nextpnr
+  - PACKAGE=nextpnr-xilinx
   - PACKAGE=openocd
   # XXX riscv32 toolchain: disabled as fails to build
   # PACKAGE=riscv32/binutils
