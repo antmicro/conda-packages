@@ -45,6 +45,8 @@ env:
   # protocol analyzers
   - PACKAGE=sigrok-cli
   - PACKAGE=yosys-plugins
+  # metapackages
+  - PACKAGE=symbiflow-toolchain-xray
 
 script:
   - bash $TRAVIS_BUILD_DIR/.travis/script.sh
