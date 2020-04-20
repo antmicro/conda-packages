@@ -19,6 +19,3 @@ index 804d334e..45ba536e 100644
  if(FUZZ_TARGET)
      message("Tweaking driver for fuzz testing")
      target_compile_definitions(driver PRIVATE FUZZ_TARGET)
--endif()
-\ No newline at end of file
-+endif()
