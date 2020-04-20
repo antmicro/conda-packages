@@ -59,6 +59,7 @@ cat >> $CONDA_PATH/condarc <<'EOF'
 EOF
 
 # Install required build tools
-conda install -y conda-build=3.14 anaconda-client jinja2 conda-verify ripgrep pexpect
+conda install -y conda-build anaconda-client jinja2 conda-verify ripgrep pexpect
+conda build --version
 
 conda info | grep --color=always -e "^" -e "populated config files"
