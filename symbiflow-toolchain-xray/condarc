@@ -1,3 +1,5 @@
 channels:
+  - m-labs
+  - pkgw-forge
   - conda-forge
   - symbiflow
