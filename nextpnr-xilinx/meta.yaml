@@ -23,6 +23,7 @@ requirements:
     - {{ compiler('cxx') }}
     - python {{ python }}
     - yosys
+    - pypy3
   host:
     - bison
     - boost
@@ -30,11 +31,9 @@ requirements:
     - eigen
     - flex
     - fontconfig
-    - icestorm
     - pkg-config
     - python {{ python }}
   run:
-    - icestorm
     - libboost
     - py-boost
     - python
