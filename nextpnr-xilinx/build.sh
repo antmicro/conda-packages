@@ -7,9 +7,9 @@ if [ x"$TRAVIS" = xtrue ]; then
 	CPU_COUNT=2
 fi
 
-cmake -DARCH=xilinx -DBUILD_GUI=OFF -DCMAKE_INSTALL_PREFIX=/ -DENABLE_READLINE=No .
+cmake -DARCH=xilinx -DBUILD_GUI=OFF -DCMAKE_INSTALL_PREFIX=${PREFIX} -DENABLE_READLINE=No .
 make -j$(nproc)
-make DESTDIR=${PREFIX} install
+make install
 
 # List of devices available
 DEVICES="xc7a35tcsg324-1"
