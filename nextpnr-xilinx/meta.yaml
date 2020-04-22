@@ -23,7 +23,7 @@ requirements:
     - {{ compiler('cxx') }}
     - python {{ python }}
     - yosys
-    - pypy3
+    - pypy3.6
   host:
     - bison
     - boost
