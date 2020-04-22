@@ -22,6 +22,8 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - python {{ python }}
+    - libboost
+    - py-boost
     - yosys
     - pypy3.6
   host:
@@ -33,6 +35,8 @@ requirements:
     - fontconfig
     - pkg-config
     - python {{ python }}
+    - libboost
+    - py-boost
   run:
     - libboost
     - py-boost
