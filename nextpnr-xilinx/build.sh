@@ -12,7 +12,10 @@ make -j$(nproc)
 make install
 
 # List of devices available
-DEVICES="xc7a35tcsg324-1"
+DEVICES="xc7a35tcsg324-1 \
+         xc7a35tcpg236-1 \
+         xc7z010clg400-1 \
+         xc7a200tsbg484-1"
 
 SHARE_DIR=${PREFIX}/share/nextpnr-xilinx
 mkdir -p $SHARE_DIR
