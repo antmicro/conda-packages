@@ -22,6 +22,6 @@ mkdir -p $SHARE_DIR
 
 # Compute data files for nextpnr-xilinx
 for device in $DEVICES; do
-    pypy3 xilinx/python/bbaexport.py --device $device --bba $SHARE_DIR/$device.bba
+    python xilinx/python/bbaexport.py --device $device --bba $SHARE_DIR/$device.bba
     ./bbasm $SHARE_DIR/$device.bba $SHARE_DIR/$device.bin -l
 done
