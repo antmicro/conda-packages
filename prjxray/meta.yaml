@@ -46,5 +46,5 @@ requirements:
 about:
   home: https://github.com/SymbiFlow/prjxray
   license: ISC
-  license_file: LICENSE.md
+  license_file: COPYING
   summary: 'Documenting the Xilinx 7-series bit-stream format.'
