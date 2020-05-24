@@ -8,6 +8,7 @@ if [ x"$TRAVIS" = xtrue ]; then
 fi
 
 mkdir build
+cd build
 cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} ..
 make -j$(nproc)
 make install
