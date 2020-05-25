@@ -22,26 +22,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - bison
     - cmake
-    - flex
-    - fontconfig
-    - ncurses
-    - pkg-config
-    - readline <8
-    - tk
-    - xorg-libice
-    - xorg-libsm
-    - xorg-libx11
-    - xorg-libxcb
-    - xorg-libxext
-    - xorg-libxft
-  run:
-    - readline <8
-    - tk
-    - fontconfig
-    - xorg-libx11
-    - xorg-libxft
 
 about:
   home: https://github.com/SymbiFlow/prjxray
