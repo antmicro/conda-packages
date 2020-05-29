@@ -23,7 +23,7 @@ env:
   - PACKAGE=libxml2
   - PACKAGE=libusb
   - PACKAGE=yosys
-  - PACKAGE=nextpnr
+  - PACKAGE=nextpnr-ice40
   - PACKAGE=nextpnr-xilinx
   - PACKAGE=openocd
   - PACKAGE=prjxray
