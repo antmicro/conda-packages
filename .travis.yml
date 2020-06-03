@@ -43,6 +43,7 @@ env:
   - PACKAGE=surelog
   - PACKAGE=sv-parser
   - PACKAGE=verible             USE_SYSTEM_GCC_VERSION="8"
+  - PACKAGE=uhdm-integration
   # protocol analyzers
   - PACKAGE=sigrok-cli
   - PACKAGE=yosys-plugins
