@@ -20,6 +20,7 @@ install:
 
 env:
   - PACKAGE=vtr
+  - PACKAGE=vtr-no-gui
   - PACKAGE=libxml2
   - PACKAGE=libusb
   - PACKAGE=yosys
