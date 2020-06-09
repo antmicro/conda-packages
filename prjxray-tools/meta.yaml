@@ -1,7 +1,7 @@
 {% set version = '%s_%04i_%s'|format(GIT_DESCRIBE_TAG|replace('v','') or '0.X', GIT_DESCRIBE_NUMBER|int, GIT_DESCRIBE_HASH or 'gUNKNOWN') %}
 
 package:
-  name: prjxray
+  name: prjxray-tools
   version: {{ version }}
 
 source:
@@ -22,29 +22,10 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - bison
     - cmake
-    - flex
-    - fontconfig
-    - ncurses
-    - pkg-config
-    - readline <8
-    - tk
-    - xorg-libice
-    - xorg-libsm
-    - xorg-libx11
-    - xorg-libxcb
-    - xorg-libxext
-    - xorg-libxft
-  run:
-    - readline <8
-    - tk
-    - fontconfig
-    - xorg-libx11
-    - xorg-libxft
 
 about:
   home: https://github.com/SymbiFlow/prjxray
   license: ISC
-  license_file: COPYING
+  license_file: LICENSE
   summary: 'Documenting the Xilinx 7-series bit-stream format.'

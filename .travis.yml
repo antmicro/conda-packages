@@ -27,7 +27,7 @@ env:
   - PACKAGE=nextpnr-ice40
   - PACKAGE=nextpnr-xilinx
   - PACKAGE=openocd
-  - PACKAGE=prjxray
+  - PACKAGE=prjxray-tools
   # XXX riscv32 toolchain: disabled as fails to build
   # PACKAGE=riscv32/binutils
   # verilog tools
