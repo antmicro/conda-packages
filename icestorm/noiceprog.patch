@@ -7,6 +7,6 @@ index c5ebc62..14bbc3e 100644
  DEBUG ?= 0
 -ICEPROG ?= 1
 +ICEPROG ?= 0
+ PROGRAM_PREFIX ?=
  
  CXX ?= clang++
- CC ?= clang
