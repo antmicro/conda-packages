@@ -27,7 +27,18 @@ requirements:
     - swig
 
 outputs:
-    - name: uhdm-integration-verilator
+    - name: surelog-uhdm
+      script: surelog-flow.sh
+      requirements:
+          run:
+              - python {{ python }}
+              - readline ==8.0
+              - gperftools
+              - libunwind
+      test:
+          commands:
+              - surelog-uhdm --version
+    - name: verilator-uhdm
       script: verilator-flow.sh
       requirements:
           run:
@@ -37,9 +48,8 @@ outputs:
               - libunwind
       test:
           commands:
-              - uhdm-surelog --version
-              - uhdm-verilator --version
-    - name: uhdm-integration-yosys
+              - verilator-uhdm --version
+    - name: yosys-uhdm
       script: yosys-flow.sh
       requirements:
           run:
@@ -49,5 +59,4 @@ outputs:
               - libunwind
       test:
           commands:
-              - uhdm-surelog --version
-              - uhdm-yosys --version
+              - yosys-uhdm --version
