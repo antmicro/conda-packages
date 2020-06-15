@@ -60,3 +60,14 @@ outputs:
       test:
           commands:
               - yosys-uhdm --version
+    # empty meta-packages with dependencies only
+    - name: uhdm-integration-verilator
+      requirements:
+          run:
+              - surelog-uhdm {{version}}
+              - verilator-uhdm {{version}}
+    - name: uhdm-integration-yosys
+      requirements:
+          run:
+              - surelog-uhdm {{version}}
+              - yosys-uhdm {{version}}
