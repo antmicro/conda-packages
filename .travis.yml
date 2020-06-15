@@ -19,7 +19,7 @@ install:
  - ./.travis/install.sh
 
 env:
-  - PACKAGE=vtr
+  - PACKAGE=vtr-gui
   - PACKAGE=vtr-no-gui
   - PACKAGE=libxml2
   - PACKAGE=libusb
