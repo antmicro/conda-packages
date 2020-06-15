@@ -19,9 +19,9 @@ build:
 
 requirements:
   run:
-    - vtr
-    - yosys
-    - yosys-plugins
+    - symbiflow-vtr
+    - symbiflow-yosys
+    - symbiflow-yosys-plugins
 
 about:
   summary: 'Conda metapackage combining VtR, Yosys and Yosys plugins.'
