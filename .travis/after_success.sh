@@ -6,16 +6,26 @@ set -e
 # Close the after_success fold travis has created already.
 travis_fold end after_success
 
+# Remove trailing ';' and split CONDA_OUT into array of packages
+IFS=';' read -r -a PACKAGES <<< "${CONDA_OUT%?}"
+
 start_section "package.contents" "${GREEN}Package contents...${NC}"
-tar -jtf $CONDA_OUT | sort
+for element in "${PACKAGES[@]}"
+do
+	tar -jtf $element | sort
+done
 end_section "package.contents"
 
 if [ x$TRAVIS_BRANCH = x"master" -a x$TRAVIS_EVENT_TYPE != x"cron" -a x$TRAVIS_PULL_REQUEST == xfalse ]; then
 	$SPACER
 
-	start_section "package.upload" "${GREEN}Package uploading...${NC}"
-	anaconda -t $ANACONDA_TOKEN upload --user $ANACONDA_USER --label main $CONDA_OUT
-	end_section "package.upload"
+	for element in "${PACKAGES[@]}"
+	do
+		start_section "package.upload" "${GREEN}Package uploading...${NC}"
+		anaconda -t $ANACONDA_TOKEN upload --user $ANACONDA_USER --label main $element
+		end_section "package.upload"
+	done
+
 fi
 
 $SPACER

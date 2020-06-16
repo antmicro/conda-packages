@@ -23,14 +23,25 @@ end_section "conda.build"
 
 $SPACER
 
+# Remove trailing ';' and split CONDA_OUT into array of packages
+IFS=';' read -r -a PACKAGES <<< "${CONDA_OUT%?}"
+
 start_section "conda.build" "${GREEN}Installing..${NC}"
-$TRAVIS_BUILD_DIR/conda-env.sh install $CONDA_OUT
+for element in "${PACKAGES[@]}"
+do
+	$TRAVIS_BUILD_DIR/conda-env.sh install $element
+done
 end_section "conda.build"
 
 $SPACER
 
 start_section "conda.du" "${GREEN}Disk usage..${NC}"
-du -h $CONDA_OUT
+
+for element in "${PACKAGES[@]}"
+do
+	du -h $element
+done
+
 end_section "conda.du"
 
 $SPACER
