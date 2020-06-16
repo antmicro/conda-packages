@@ -6,7 +6,7 @@ package:
 
 source:
   git_rev: master
-  git_url: https://github.com/antmicro/uhdm-integration.git
+  git_url: https://github.com/alainmarcel/uhdm-integration.git
 
 build:
   script_env:
