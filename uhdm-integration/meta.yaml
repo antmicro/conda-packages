@@ -32,7 +32,6 @@ outputs:
       requirements:
           run:
               - python {{ python }}
-              - readline ==8.0
               - gperftools
               - libunwind
       test:
@@ -42,10 +41,10 @@ outputs:
       script: verilator-flow.sh
       requirements:
           run:
-              - python {{ python }}
-              - readline ==8.0
-              - gperftools
-              - libunwind
+              - {{ compiler('cxx') }}
+              - bison
+              - flex
+              - ncurses
       test:
           commands:
               - verilator-uhdm --version
@@ -53,10 +52,7 @@ outputs:
       script: yosys-flow.sh
       requirements:
           run:
-              - python {{ python }}
-              - readline ==8.0
-              - gperftools
-              - libunwind
+              - readline
       test:
           commands:
               - yosys-uhdm --version
