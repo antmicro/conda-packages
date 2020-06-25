@@ -50,6 +50,9 @@ outputs:
               - verilator-uhdm --version
     - name: yosys-uhdm
       script: yosys-flow.sh
+      requirements:
+          run:
+              - ncurses
       test:
           commands:
               - yosys-uhdm --version
