@@ -15,3 +15,6 @@ make -j$CPU_COUNT surelog/parse
 make -j$CPU_COUNT uhdm/build
 make -j$CPU_COUNT uhdm/verilator/build
 make -j$CPU_COUNT ENABLE_READLINE=0 yosys/yosys
+
+# Mostly verifying that libreadline is indeed not linked
+ldd yosys/yosys
