@@ -52,7 +52,7 @@ outputs:
       script: yosys-flow.sh
       requirements:
           run:
-              - readline
+              - ncurses
       test:
           commands:
               - yosys-uhdm --version

@@ -14,4 +14,5 @@ export LDFLAGS="$CXXFLAGS -L$BUILD_PREFIX/lib -lrt -ltinfo"
 make -j$CPU_COUNT surelog/parse
 make -j$CPU_COUNT uhdm/build
 make -j$CPU_COUNT uhdm/verilator/build
-make -j$CPU_COUNT yosys/yosys
+make -j$CPU_COUNT ENABLE_READLINE=0 yosys/yosys
+
