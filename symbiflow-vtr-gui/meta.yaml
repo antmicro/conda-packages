@@ -28,7 +28,6 @@ requirements:
     - fontconfig
     - ncurses
     - pkg-config
-    - readline <8
     - tk
     - xorg-libice
     - xorg-libsm
@@ -40,7 +39,6 @@ requirements:
     - tbb-devel
     - gtk3
   run:
-    - readline <8
     - tk
     - fontconfig
     - xorg-libx11
