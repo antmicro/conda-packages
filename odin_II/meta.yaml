@@ -27,7 +27,6 @@ requirements:
     - fontconfig
     - ncurses
     - pkg-config
-    - readline <8
     - tk
     - xorg-libice
     - xorg-libsm
