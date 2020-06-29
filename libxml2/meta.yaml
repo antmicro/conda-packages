@@ -29,10 +29,8 @@ requirements:
     - make  # [not win]
     - m2-patch  # [win]
   host:
-    - xz  # [not win]
     - zlib
   run:
-    - xz  # [not win]
     - zlib
 
 test:
