@@ -25,6 +25,8 @@ requirements:
     - flex
     - libunwind
     - swig
+  host:
+    - python {{ python }}
   run:
     - ncurses
     - gperftools
