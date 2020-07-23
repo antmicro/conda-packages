@@ -1,21 +1,18 @@
 diff --git a/tools/CMakeLists.txt b/tools/CMakeLists.txt
-index 804d334e..45ba536e 100644
+index f1356895..6902162d 100644
 --- a/tools/CMakeLists.txt
 +++ b/tools/CMakeLists.txt
-@@ -1,15 +1,15 @@
+@@ -1,11 +1,11 @@
  add_executable(driver driver/driver.cpp)
--target_link_libraries(driver PRIVATE slang)
-+target_link_libraries(driver PRIVATE slang -static -Wl,--whole-archive -lpthread -Wl,--no-whole-archive)
- target_link_libraries(driver PRIVATE CONAN_PKG::fmt)
+-target_link_libraries(driver PRIVATE slangcompiler)
++target_link_libraries(driver PRIVATE slangcompiler -static -Wl,--whole-archive -lpthread -Wl,--no-whole-archive)
  set_target_properties(driver PROPERTIES OUTPUT_NAME "slang")
  
  install(TARGETS driver RUNTIME DESTINATION bin)
  
  add_executable(rewriter rewriter/rewriter.cpp)
--target_link_libraries(rewriter PRIVATE slang)
-+target_link_libraries(rewriter PRIVATE slang -static -Wl,--whole-archive -lpthread -Wl,--no-whole-archive)
- target_link_libraries(rewriter PRIVATE CONAN_PKG::fmt)
+-target_link_libraries(rewriter PRIVATE slangcompiler)
++target_link_libraries(rewriter PRIVATE slangcompiler -static -Wl,--whole-archive -lpthread -Wl,--no-whole-archive)
  
  if(FUZZ_TARGET)
      message("Tweaking driver for fuzz testing")
-     target_compile_definitions(driver PRIVATE FUZZ_TARGET)
