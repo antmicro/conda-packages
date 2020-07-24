@@ -8,7 +8,7 @@ export CXX=g++-${USE_SYSTEM_GCC_VERSION}
 
 mkdir build && cd build
 
-cmake .. -DSLANG_INCLUDE_TESTS=OFF -DCMAKE_BUILD_TYPE=Release
+cmake .. -DSLANG_INCLUDE_TESTS=OFF -DCMAKE_BUILD_TYPE=Release -DSTATIC_BUILD=ON
 
 make
 
