@@ -24,6 +24,7 @@ env:
   - PACKAGE=libxml2
   - PACKAGE=libusb
   - PACKAGE=symbiflow-yosys
+  - PACKAGE=antmicro-yosys
   - PACKAGE=nextpnr-ice40
   - PACKAGE=nextpnr-xilinx
   - PACKAGE=openocd
