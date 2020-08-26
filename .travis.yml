@@ -46,7 +46,7 @@ env:
   - PACKAGE=surelog
   - PACKAGE=sv-parser
   - PACKAGE=verible             USE_SYSTEM_GCC_VERSION="8"
-  - PACKAGE=uhdm-integration
+  - PACKAGE=uhdm-integration    USE_SYSTEM_GCC_VERSION="9"
   # protocol analyzers
   - PACKAGE=sigrok-cli
   - PACKAGE=symbiflow-yosys-plugins
