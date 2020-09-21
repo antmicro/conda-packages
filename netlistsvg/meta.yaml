@@ -24,7 +24,10 @@ requirements:
     - nodejs
   run:
     - nodejs
-    - yosys
+
+test:
+  requires:
+    - symbiflow-yosys
 
 about:
   home: https://nturley.github.io/netlistsvg/
