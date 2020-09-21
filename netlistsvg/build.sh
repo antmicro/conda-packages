@@ -8,9 +8,14 @@ if [ x"$TRAVIS" = xtrue ]; then
 fi
 
 which npm
-ls $PWD
-npm install -g netlistsvg
+npm install -g .
 
-ls $PREFIX/lib/node_modules/netlistsvg
-ls $PREFIX/lib/node_modules/netlistsvg/doc
-ls $PREFIX/lib/node_modules/netlistsvg/lib/default.svg
+# Remove links created by npm
+unlink $PREFIX/bin/netlistsvg
+unlink $PREFIX/bin/netlistsvg-dumplayout
+unlink $PREFIX/lib/node_modules/netlistsvg
+
+# Copy the content instead, make relative links
+cp -r  ./ $PREFIX/lib/node_modules/netlistsvg
+ln -r -s $PREFIX/lib/node_modules/netlistsvg/bin/netlistsvg.js $PREFIX/bin/netlistsvg
+ln -r -s $PREFIX/lib/node_modules/netlistsvg/bin/exportLayout.js $PREFIX/bin/netlistsvg-dumplayout
