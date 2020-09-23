@@ -23,7 +23,8 @@ env:
   - PACKAGE=symbiflow-vtr
   - PACKAGE=libxml2
   - PACKAGE=libusb
-  - PACKAGE=symbiflow-yosys
+  - PACKAGE=symbiflow-yosys     LIBFFI_VERSION=3.2.1
+  - PACKAGE=symbiflow-yosys     LIBFFI_VERSION=3.3
   - PACKAGE=antmicro-yosys
   - PACKAGE=nextpnr-ice40
   - PACKAGE=nextpnr-xilinx
