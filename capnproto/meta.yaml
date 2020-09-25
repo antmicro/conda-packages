@@ -8,6 +8,8 @@ source:
   fn: v{{ version }}.tar.gz
   url: https://github.com/sandstorm-io/capnproto/archive/v{{ version }}.tar.gz
   md5: 1601022b45a083e7f0f8803e50f7e06b
+  patches:
+      - cmake.patch
 
 build:
   # number: 201803050325
