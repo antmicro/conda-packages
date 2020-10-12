@@ -1,2 +1,4 @@
-python:
+python_run:
     - 3.7
+python_build:
+    - 3.6
