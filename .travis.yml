@@ -29,7 +29,7 @@ env:
   - PACKAGE=capnproto
   - PACKAGE=capnproto-java
   - PACKAGE=nextpnr-ice40
-  - PACKAGE=nextpnr-xilinx
+  - PACKAGE=nextpnr-xilinx      KEEP_ALIVE=true
   - PACKAGE=openocd
   - PACKAGE=prjxray-tools
   - PACKAGE=prjxray-db
