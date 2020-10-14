@@ -16,16 +16,16 @@ build:
   script_env:
     - CI
     - TRAVIS
+    - USE_PYPY
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - python {{ python_build }}
+    - python {{ python }}
     - libboost
     - py-boost
     - symbiflow-yosys
-    - pypy3.6
   host:
     - bison
     - boost
@@ -34,13 +34,13 @@ requirements:
     - flex
     - fontconfig
     - pkg-config
-    - python {{ python_build }}
+    - python {{ python }}
     - libboost
     - py-boost
   run:
     - libboost
     - py-boost
-    - python {{ python_run }}
+    - python
     - symbiflow-yosys
 
 test:

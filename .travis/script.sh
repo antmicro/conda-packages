@@ -18,10 +18,9 @@ end_section "conda.check"
 $SPACER
 
 start_section "conda.build" "${GREEN}Building..${NC}"
-if [ $KEEP_ALIVE = 'true' ]; then
+if [[ "${KEEP_ALIVE}" = 'true' ]]; then
 	travis_wait $TRAVIS_MAX_TIME $CONDA_PATH/bin/python $TRAVIS_BUILD_DIR/.travis-output.py /tmp/output.log $TRAVIS_BUILD_DIR/conda-env.sh build $CONDA_BUILD_ARGS
 else
-
 	$CONDA_PATH/bin/python $TRAVIS_BUILD_DIR/.travis-output.py /tmp/output.log $TRAVIS_BUILD_DIR/conda-env.sh build $CONDA_BUILD_ARGS
 fi
 end_section "conda.build"

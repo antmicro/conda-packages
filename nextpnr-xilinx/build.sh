@@ -22,8 +22,13 @@ DEVICES="xc7a35tcsg324-1 \
 SHARE_DIR=${PREFIX}/share/nextpnr-xilinx
 mkdir -p $SHARE_DIR
 
+PYTHON_BINARY=python
+if [ ! -z "${USE_PYPY}" ]; then
+    PYTHON_BINARY=pypy3
+fi
+
 # Compute data files for nextpnr-xilinx
 for device in $DEVICES; do
-    pypy3 xilinx/python/bbaexport.py --device $device --bba $SHARE_DIR/$device.bba
+    ${PYTHON_BINARY} xilinx/python/bbaexport.py --device $device --bba $SHARE_DIR/$device.bba
     ./bbasm $SHARE_DIR/$device.bba $SHARE_DIR/$device.bin -l
 done
