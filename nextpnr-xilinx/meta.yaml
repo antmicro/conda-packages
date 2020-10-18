@@ -16,6 +16,7 @@ build:
   script_env:
     - CI
     - TRAVIS
+    - USE_PYPY
 
 requirements:
   build:

@@ -9,6 +9,12 @@ if [ ! -z "$USE_SYSTEM_GCC_VERSION" ]; then
 	sudo apt install -y gcc-${USE_SYSTEM_GCC_VERSION} g++-${USE_SYSTEM_GCC_VERSION}
 fi
 
+if [ ! -z "$USE_PYPY" ]; then
+	sudo add-apt-repository ppa:pypy/ppa -y
+	sudo apt update
+	sudo apt install -y pypy3
+fi
+
 # Getting the conda environment
 start_section "environment.conda" "Setting up basic ${YELLOW}conda environment${NC}"
 
