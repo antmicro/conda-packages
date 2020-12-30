@@ -4,7 +4,7 @@ set -e
 set -x
 
 if [ x"$TRAVIS" = xtrue ]; then
-	CPU_COUNT=2
+	CPU_COUNT=$(nproc)
 fi
 
 export PKG_CONFIG_PATH="$BUILD_PREFIX/lib/pkgconfig/"
@@ -15,4 +15,3 @@ make -j$CPU_COUNT surelog/parse
 make -j$CPU_COUNT uhdm/build
 make -j$CPU_COUNT uhdm/verilator/build
 make -j$CPU_COUNT ENABLE_READLINE=0 yosys/yosys
-
