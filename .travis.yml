@@ -25,6 +25,7 @@ env:
   - PACKAGE=symbiflow-yosys     LIBFFI_VERSION=3.2.1
   - PACKAGE=symbiflow-yosys     LIBFFI_VERSION=3.3
   - PACKAGE=antmicro-yosys
+  - PACKAGE=yosys
   - PACKAGE=capnproto
   - PACKAGE=capnproto-java
   - PACKAGE=nextpnr-ice40
